@@ -193,9 +193,18 @@ titles.each(function() {
 						var imdbUrl = 'http://www.imdb.com/title/' + imdbMatch.id + '/';
 						getMovieInfo(imdbUrl, 0, function(results) {
 							if (results) {
+								var color = 'gray';
+								if (results.rating >= 9) {
+									color = 'red';
+								} else if (results.rating >= 8) {
+									color = 'orange';
+								} else if (results.rating >= 7) {
+									color = 'yellow';
+								}
+
 								torrentItem.children('.loading-imdb-info').remove();
 								torrentItem.append(
-									'<a href="' + imdbUrl + '"><span style="color: ' + imdbMatch.color + '; margin-left: 5px;">' + 
+									'<a href="' + imdbUrl + '"><span style="color: ' + color + '; margin-left: 5px;">' + 
 									imdbMatch.title + ' - ' + imdbMatch.year + ' - ' + results.rating + ' (' + results.votecount + 
 									')</span></a>');
 							} else {
