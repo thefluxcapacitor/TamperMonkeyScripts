@@ -18,4 +18,4 @@ debugger;
 });
 
 $('.advertising').hide();
-$('.icomment.icommentjs.icon16').hide();
+
