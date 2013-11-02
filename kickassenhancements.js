@@ -14,7 +14,7 @@ $('.torrentname').each(function() {
 debugger;
 	var $item = $(this);
 	var searchTerm = $item.find('>a:nth-child(2)').text();
-	$item.parent().find('.iaconbox').prepend('<a href="http://subsearch.apphb.com/home/searchsub?searchterm=' + escape(searchTerm) + '">SUB</a>');
+	$item.parent().find('.iaconbox').prepend('<a target="_blank" href="http://subsearch.apphb.com/home/searchsub?searchterm=' + escape(searchTerm) + '">SUB</a>');
 });
 
 $('.advertising').hide();
